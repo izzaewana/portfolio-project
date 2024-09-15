@@ -1,12 +1,11 @@
 # Portfolio Part 1: Component Brainstorming
 
-- **Name**: <!-- TODO: fill with first and last name (e.g., Brutus Buckeye) then delete this comment -->
-- **Dot Number**: <!-- TODO: fill with OSU dot number (e.g., buckeye.17) then delete this comment -->
-- **Due Date**: <!-- TODO: fill with due date and time (e.g., 10/17 @ 3:10 PM EST) then delete this comment -->
+- **Name**: Izza Ewana Ayob
+- **Dot Number**: Ayob.6
+- **Due Date**: 9/16/2024 3pm
 
 ## Assignment Overview
 
-<!-- TODO: read the assignment overview then delete this comment -->
 
 The overall goal of the portfolio project is to have you design and implement
 your own OSU component. There are no limits to what you choose to design and
@@ -29,7 +28,6 @@ implement.
 
 ## Assignment Checklist
 
-<!-- TODO: browse the checklist then delete this comment -->
 
 To be sure you have completed everything on this assignment, we have littered
 this document with TODO comments. You can browse all of them in VSCode by
@@ -52,7 +50,6 @@ to the tree diagram (you may remove this one as well):
 
 ## Assignment Learning Objectives
 
-<!-- TODO: read the assignment learning objectives then delete this comment -->
 
 Without learning objectives, there really is no clear reason why a particular
 assessment or activity exists. Therefore, to be completely transparent, here is
@@ -67,7 +64,6 @@ project. Specifically, students should be able to:
 
 ## Assignment Rubric: 10 Points
 
-<!-- TODO: read the assignment rubric then delete this comment -->
 
 Again, to be completely transparent, most of the portfolio project, except the
 final submission, is designed as a formative assessment. Formative assessments
@@ -98,15 +94,15 @@ do good work.
 > brainstorming. Plus it helps us get to know you better! Feel free to share
 > images in this section.
 
-<!-- TODO: briefly talk about your interests then delete this comment.
-Also, protip: you can preview what your response looks like by hitting
-the magnifying glass icon in the upper-right corner or pressing CTRL+K and
-then V. This kind of button combination is called a chord, for whatever
-reason -->
+I have multiple interests but I don't think they're related to my major (I kinda want this portfolio to be related to my major). But these are some of my passions:
+1. Paint & do sketches.
+2. Read (novels).
+3. I really love listening & exploring new music/songs (my fav app is spotify).
+4. I like watching anime too my current favourite is one peace.
+5. Journaling.
 
 ## Assignment
 
-<!-- TODO: read the assignment section then delete this comment -->
 
 As previously stated, you are tasked with brainstorming 3 possible components.
 To aid you in this process, we have provided [some example components][example-components]
@@ -114,7 +110,6 @@ that may help you in your brainstorming. All of these components were made at
 some point by one of your peers, so you should feel confident that you can
 accomplish any of them.
 
-<!-- TODO: browse the list of possible projects then delete this comment -->
 
 There is no requirement that you use any of the components listed above.
 If you want to model something else, go for it! Very common early object
@@ -123,8 +118,6 @@ etc. Make of this whatever seems interesting to you, and keep in mind that
 you're just brainstorming right now. You do not have to commit to anything.
 
 ### Example Component
-
-<!-- TODO: review this example component then delete this comment -->
 
 To help you brainstorm a few components, we've provided an example below of a
 component you already know well: NaturalNumber. We highly recommend that you
@@ -192,70 +185,103 @@ will likely refine your design to make your implementation easier to use.
 
 > Please use this section to share your designs.
 
-- Component Design #1: <!-- TODO: give component a name then delete this comment -->
+- Component Design #1: `MusicPlaylist`
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - The purpose of this component is to model a collection of songs in a playlist. The kernel provides minimal functionality to handle the basic structure of a playlist, such as adding or removing songs. The secondary methods will enable more complex interactions, such as shuffling, filtering by genre, or getting a recommended next song (am considering a blend between two people favourites or counting percentage of smiliarity in music taste).
+
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - `void addSong(Song s)`: Adds the song s to the playlist.
+    - `Song removeSong(int index)`: Removes and returns the song at the specified index.
+    - `boolean isEmpty()`: Reports whether the playlist is empty.
+    - `int size()`: Returns the number of songs in the playlist.
+
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - `void shuffle()`: Randomly rearranges the order of songs in the playlist.
+    - `List<Song> filterByGenre(String genre)`: Returns a list of songs in the playlist that belong to the specified genre.
+    - `Song getNextRecommendedSong()`: Recommends the next song based on the user's listening history or playlist order.
+    - `void play()`: Starts playing the songs in the playlist from the first track.
+    - `Song getCurrentSong()`: Returns the currently playing song
+    - `void skip()`: Skips to the next song in the playlist.
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, playlists are mutable as songs are frequently added, removed, and reordered. The kernel methods inherently modify the playlist by adding and removing songs.
+
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - list? queue?
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, possibly an enum for Genre to categorize songs more easily, or constants for specifying the default playback order.
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes. For example, shuffle() can be implemented by iterating over the list of songs and swapping them randomly. filterByGenre() would iterate through the playlist and collect songs where the genre matches the input. Another example is play(), which can use a loop to sequentially retrieve songs and start playing them from the first track.
 
 
-- Component Design #2: <!-- TODO: give component a name then delete this comment -->
+- Component Design #2: `EmotionBookHighlighter`
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - The purpose of this component is to model a system that highlights passages from books, categorizes them based on associated emotions, and allows for easy retrieval of quotes and their corresponding page numbers. The kernel provides basic functionality for storing and retrieving highlighted passages and emotions. Secondary methods will enable more complex operations, such as sorting by emotion or retrieving quotes for specific emotions.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - `void highlightPassage(String quote, int page, String emotion)`: Highlights a passage from the book, associates it with a specific emotion, and stores the page number.
+    - `String getQuote(int index)`: Retrieves the highlighted quote at the given index.
+    - `String getEmotion(int index)`: Retrieves the emotion associated with the quote at the given index.
+    - `int getPage(int index)`: Retrieves the page number of the quote at the given index.
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - `List<String> getQuotesByEmotion(String emotion)`: Returns a list of all quotes that are associated with a particular emotion.
+    - `void sortQuotesByEmotion()`: Sorts the highlighted quotes by their associated emotions in alphabetical order or by predefined emotional categories (e.g., happy, sad, angry).
+    - `List<String> getAllQuotes()`: Retrieves all the highlighted quotes from the book.
+    - `Map<String, Integer> getQuoteWithPage(int index)`: Returns a quote along with its associated page number as a key-value pair.
+    - `List<String> getSortedEmotions()`: Returns a sorted list of all emotions that have been associated with highlighted quotes.
+    - `void removeHighlight(int index)`: Removes a highlighted passage from the system.
+    - `int getNumberOfHighlights()`: Returns the total number of highlighted passages.
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, this component is mutable. The highlighted passages, emotions, and page numbers will be constantly added, removed, or updated, making it inherently mutable.
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, the component would likely rely on internal classes such as Pair<String, Integer> or a similar structure to store quotes along with their page numbers. A Map<String, List<Pair<String, Integer>>> could be used to associate each emotion with a list of quotes and their respective pages.
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, an enum could be useful to define a set of standard emotions, such as Emotion.HAPPY, Emotion.SAD, Emotion.ANGRY, etc., for consistency across the system. You might also have a constant like DEFAULT_SORT_ORDER for sorting emotions in a particular order.
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes. For example, getQuotesByEmotion() can iterate over the list of highlighted quotes and return those associated with the specified emotion. Similarly, sortQuotesByEmotion() can use a basic sorting algorithm, leveraging the emotional categories stored with each quote.
 
 
-- Component Design #3: <!-- TODO: give component a name then delete this comment -->
+- Component Design #3: `Emotion-Based-Journal`
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - This component models a journaling system where users can write journal entries and associate each entry with an emotion or topic. The kernel focuses on basic functionality like adding, removing, and retrieving entries, while secondary methods enable more complex operations such as searching, sorting by emotions, and extracting key insights.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - `void addEntry(String entry, String emotion)`: Adds a journal entry associated with a specific emotion (e.g., happy, sad, anxious).
+    - `String getEntry(int index)`: Retrieves the journal entry at the specified index.
+    - `String getEmotion(int index)`: Returns the emotion associated with the journal entry at the specified index.
+    - `void removeEntry(int index)`: Removes the journal entry at the given index.
+    - `int getTotalEntries()`: Returns the total number of journal entries.
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - `List<String> searchByEmotion(String emotion)`: Returns a list of all journal entries associated with the specified emotion.
+    - `void sortByEmotion()`: Sorts all journal entries by emotion for easier retrieval and reflection.
+    - `Map<String, Integer>` getEntriesByEmotionCount(): Returns a count of how many entries have been categorized under each emotion.
+    - `String getMostFrequentEmotion()`: Retrieves the emotion that appears most frequently across all journal entries.
+    - `List<String> getEntriesByKeyword(String keyword)`: Searches for and returns entries that contain a specific keyword or phrase.
+    - `void addQuote(String quote, int page)`: Adds a favorite quote from a book along with the page number it appears on, which could be useful for reflecting on inspiring ideas during journaling.
+    - `Map<String, Integer> getQuotes()`: Returns all stored quotes along with their page numbers.
+    - `String generateSummary()`: Generates a brief summary of the user's recent entries, including the most frequent emotions, recurring themes, or significant quotes.
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, it would be mutable as journal entries are constantly being added, removed, or modified.
+
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, it could rely on internal classes such as Map<String, List<String>> to store emotions as keys and associated journal entries as values, or use a Pair<String, Integer> structure to store quotes and their corresponding page numbers.
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, an enum could be useful for predefined emotions such as Emotion.HAPPY, Emotion.SAD, or Emotion.ANXIOUS, ensuring consistency when categorizing entries.
+
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes. For example, searchByEmotion() can iterate over the journal entries, using the getEmotion() method to find matching emotions. Similarly, getEntriesByKeyword() would search through the entries using a basic string-matching algorithm.
 
 ## Post-Assignment
 
@@ -264,7 +290,6 @@ completed the assignment.
 
 ### Changelog
 
-<!-- TODO: create CHANGELOG then delete this comment -->
 
 At the end of every assignment, you should update the
 [CHANGELOG.md](../../CHANGELOG.md) file found in the root of the project folder.
@@ -303,7 +328,6 @@ of development.
 
 ### Submission
 
-<!-- TODO: read the submission instructions then delete this comment -->
 
 If you have completed the assignment using this template, we recommend that
 you convert it to a PDF before submission. If you're not sure how, check out
@@ -313,7 +337,6 @@ all your work is there before submitting. For future assignments, you will
 just be submitting a link to a pull request. This will be the only time
 you have to submit any PDFs.
 
-<!-- TODO: upload a PDF of this document and the CHANGELOG to Carmen then delete this comment -->
 
 ### Peer Review
 
